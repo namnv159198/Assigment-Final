@@ -14,9 +14,9 @@ class CreateTablePhongchieu extends Migration
     public function up()
     {
         Schema::create('phongchieu', function (Blueprint $table) {
-            $table->bigIncrements('id_phong_chieu');
-            $table->unsignedBigInteger("id_rap");
+            $table->bigIncrements('MaPhong');
             $table->string("ten_phong");
+            $table->unsignedInteger("SoLuongGhe");
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableLoaichieu extends Migration
+class CreateTableVe extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateTableLoaichieu extends Migration
      */
     public function up()
     {
-        Schema::create('loaichieu', function (Blueprint $table) {
-            $table->bigIncrements('id_the_loai_chieu');
-            $table->string("ten_the_loai_chieu");
+        Schema::create('ve', function (Blueprint $table) {
+            $table->bigIncrements('MaVe');
+            $table->unsignedBigInteger("MaLichChieu");
+            $table->unsignedBigInteger("SoGhe");
+            $table->unsignedInteger("gia");
+            $table->date("ngayBan");
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateTableLoaichieu extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loaichieu');
+        Schema::dropIfExists('ve');
     }
 }

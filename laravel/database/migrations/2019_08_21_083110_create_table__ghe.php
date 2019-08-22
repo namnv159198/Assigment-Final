@@ -14,9 +14,10 @@ class CreateTableGhe extends Migration
     public function up()
     {
         Schema::create('ghe', function (Blueprint $table) {
-            $table->bigIncrements('id_ghe');
-            $table->unsignedBigInteger("id_phong_chieu");
-            $table->string("so_ghe");
+            $table->bigIncrements('SoGhe');
+            $table->unsignedBigInteger("MaPhong");
+            $table->unsignedInteger("loaiGhe");
+            $table->string("hangGhe");
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateTableGhe extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ghe');
+        Schema::dropIfExists('Ghe');
     }
 }

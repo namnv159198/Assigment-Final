@@ -14,14 +14,12 @@ class CreateTablePhim extends Migration
     public function up()
     {
         Schema::create('phim', function (Blueprint $table) {
-            $table->bigIncrements('id_phim');
-            $table->string("ten_phim");
-            $table->date("nph");
-            $table->string("the_loai");
-            $table->string("mac_phim");
-            $table->string("dien_vien");
-            $table->string("dao_dien");
-            $table->string("thoi_luong");
+            $table->bigIncrements('MaPhim');
+            $table->string("tenPhim");
+            $table->string("dienVien");
+            $table->string("daoDien");
+            $table->unsignedInteger("theLoaiPhim");
+            $table->unsignedInteger("thoiLuong");
             $table->timestamps();
         });
     }

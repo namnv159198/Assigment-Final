@@ -14,5 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get("/Hello-world","DemoController@helloWorld");
-Route::get("/say-Hello","DemoController@sayHello");
+//Route::get("/Hello-world","DemoController@helloWorld");
+//Route::get("/say-Hello","DemoController@sayHello");
+Route::get("/quan-ly-ghe","DemoController@listGhe");
+Route::get("/quan-ly-phong-chieu","DemoController@listPhongChieu");
+Route::get("/quan-ly-phim","DemoController@listPhim");
+Route::get("/quan-ly-lich-chieu","DemoController@listLichChieu");
+Route::get("/quan-ly-ve","DemoController@listVe");
+Route::get("/quan-ly-suat-chieu","DemoController@listSuatChieu");

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableKhunggio extends Migration
+class CreateTableSuatChieu extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateTableKhunggio extends Migration
      */
     public function up()
     {
-        Schema::create('khunggio', function (Blueprint $table) {
-            $table->bigIncrements('id_khung_gio');
-            $table->string("khung_gio");
+        Schema::create('suatchieu', function (Blueprint $table) {
+            $table->bigIncrements('MaSuatChieu');
+            $table->time("thoiGianBatDau");
+            $table->time("thoiGianKetThuc");
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateTableKhunggio extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('khunggio');
+        Schema::dropIfExists('SuatChieu');
     }
 }
